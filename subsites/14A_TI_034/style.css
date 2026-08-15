@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Archive Grotesk 400";
+  font-size: 11px;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing:antialiased;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.canvas-wrap {
+  grid-column: span 9;
+  grid-row: 1;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.canvas-wrap canvas {
+  display: block;
+}
+
+.image-preview {
+  grid-column: 13 / span 2;
+  grid-row: 1;
+  align-self: start;
+}
+
+.image-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.panel-controls {
+  display: flex;
+  flex-direction: column;
+  grid-column: 10 / span 2;
+  grid-row: 1;
+}
+
+.panel-sliders {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  align-content: start;
+  grid-column: span 14;
+  grid-row: 2;
+  border-bottom: solid 0.5px #00000076;
+}
+
+.slider-row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: span 14;
+  align-items: center;
+  border-top: solid 0.5px #00000076;
+}
+
+.slider-id {
+  grid-column: 1;
+}
+
+.slider-name {
+  grid-column: 2 / span 2;
+}
+
+.slider-row .slider-wrap {
+  grid-column: 4 / span 9;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 30px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.counter span {
+  flex: 1;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #000000;
+  font-family: "Archive Grotesk Mono 400";
+}
+
+label span {
+  text-align: end;
+}
+
+.slider-wrap {
+  position: relative;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+input[type=range] {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Track */
+input[type=range]::-webkit-slider-runnable-track {
+  height: 1px;
+  /* background: #ccc; */
+}
+input[type=range]::-moz-range-track {
+  height: 1px;
+  /* background: #ccc; */
+}
+
+/* Thumb */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+input[type=range]::-moz-range-thumb {
+  width: 30px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Progress fill */
+input[type=range]::-moz-range-progress {
+  height: 1px;
+  background: #000;
+}
+
+/* Thumb label */
+.slider-thumb {
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: 'Unica77 Mono', monospace;
+  /* font-size: 11px; */
+  color: #000;
+  background: #fff;
+  z-index: 2;
+  line-height: 1;
+}
+
+button {
+  all: unset;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  /* padding: 3px 6px;  */
+}
+
+textarea {
+  font-family: 'Unica77 Mono', monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  text-transform: none;
+  white-space: pre;
+  color: #000;
+  background: #fff;
+  border: solid 0.5px #00000076;
+  resize: vertical;
+  padding: 4px;
+}
+
+#btnRowPlus, #btnColPlus {
+  padding-left: 10px;
+}
+
+button:hover {
+  transform: skew(-0.312rad);
+}

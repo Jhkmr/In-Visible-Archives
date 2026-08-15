@@ -1,0 +1,177 @@
+body, html {
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    background:#f4f4f4;
+    overflow:hidden;
+}
+
+.app {
+    display:flex;
+    height:100vh;
+}
+
+.panel {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #000000;
+    background: #f4f4f4;
+}
+
+.panel-section {
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #000000;
+    height: 50vh;
+}
+
+.buttons-section {
+    flex: 0 0 auto;
+    margin-top: 50px;
+    padding-left:50px;
+}
+
+h2{
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 10pt;
+    font-variant: all-caps;
+    position: fixed;
+    margin-top: 0;
+}
+
+h3{
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 10pt;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left:-50px;
+}
+
+.images-section {
+    flex: 1;
+    margin-top: 50px;
+    padding-left:50px;
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid #000000;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.sidebar {
+    width:260px;
+    padding:20px;
+    overflow-y:auto;
+    border-left:1px solid #000000;
+}
+
+.canvas-container {
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+    box-sizing:border-box;
+}
+
+canvas {
+    background:#f4f4f4;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    font-family: monospace;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: #ddd;
+    outline: none;
+appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+    border: none;
+}
+
+#cornerValue {
+    font-family: monospace;
+    font-size: 10pt;
+    min-width: 20px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f4f4f4;
+    color: black;
+    border: 1px solid black;
+    font-weight: 500;
+    font-family: monospace;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+button:active {
+    background-color: #1d4ed8;
+}

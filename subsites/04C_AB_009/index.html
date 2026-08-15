@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase Shift — Line Gradient</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="canvas-container"></div>
+
+  <div id="controls">
+    <div class="control-group">
+      <span class="channel-label r">R</span>
+      <select id="waveR">
+        <option value="sine">Sine</option>
+        <option value="square" selected>Square</option>
+        <option value="sawtooth">Sawtooth</option>
+        <option value="triangle">Triangle</option>
+      </select>
+      <select id="ratioR" title="R frequency ratio">
+        <option value="1" selected>1×</option>
+        <option value="2">2×</option>
+        <option value="3">3×</option>
+        <option value="4">4×</option>
+        <option value="10">10×</option>
+      </select>
+      <span class="control-label">Phase</span>
+      <input type="range" id="phaseR" min="0" max="12" step="1" value="0">
+      <span id="phaseRLabel">0°</span>
+    </div>
+
+    <div class="control-group">
+      <span class="channel-label l">L</span>
+      <select id="waveL">
+        <option value="sine">Sine</option>
+        <option value="square">Square</option>
+        <option value="sawtooth" selected>Sawtooth</option>
+        <option value="triangle">Triangle</option>
+      </select>
+      <select id="ratioL" title="L frequency ratio">
+        <option value="1" selected>1×</option>
+        <option value="2">2×</option>
+        <option value="3">3×</option>
+        <option value="4">4×</option>
+        <option value="10">10×</option>
+      </select>
+      <span class="control-label">Phase</span>
+      <input type="range" id="phaseL" min="0" max="12" step="1" value="0">
+      <span id="phaseLLabel">0°</span>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
+</html>

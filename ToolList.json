@@ -1,0 +1,473 @@
+[
+  {
+    "number": "01",
+    "title": "Visual Classification I – Flow of Information",
+    "text": "Due to the concept of subjective classification, the question of how visual objects are individually processed becomes a starting point for the first experiments. Something as simple as reading direction may tell us something about the design of an object while acknowledging slight differences in interpretation. To translate this, the canvas is divided into a grid whose cells each contain a visible corner element, similar to an arrowhead of sorts. These areas could then be rotated to follow the viewer's reading direction. A sharper corner option additionally accounts for either steeper or more shallow angles.",
+    "subitems": [
+      {
+        "number": "  A_PA_001",
+        "date": "09 / 3",
+        "title": "Basic Grid Structure",
+        "typology": "Perception",
+        "interactions": "Rotating Cells",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_PA_002",
+        "date": "10 / 3",
+        "title": "Modular Corner Components",
+        "typology": "Perception",
+        "interactions": "Rotating Cells",
+        "convolutes": "VD",
+        "status": "Forked"
+      },
+      {
+        "number": "  C_PA_005",
+        "date": "20 / 3",
+        "title": "Introducing Textured Variables",
+        "typology": "Perception",
+        "interactions": "Rotating Cells / Buttons / Selectors / Sliders",
+        "convolutes": "MM_VD",
+        "status": "Complete"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "02",
+    "title": "Visual Classification II – Visual Language",
+    "text": "In a similar vein to the flow of information on a page, points of tension and shape language appeared briefly within the scope of these first experiments. I could use these concepts as a playground for various interactions. The tool environment provides buttons and sliders but can also be interacted with by tracking the mouse or selecting areas on the canvas. Conceptually, however, the simplistic approach of these first two rounds of experiments proved to lead towards somewhat of a dead end. From my first impressions in applying the tools to an artifact, the simplification of an object lacks any epistemic value from a practitioner’s perspective. While I could use the tools to record parts of the image, it lacked purpose and proved too literal of a translation.",
+    "subitems": [
+      {
+        "number": "  A_PA_003",
+        "date": "15 / 3",
+        "title": "Identifying Shape Language",
+        "typology": "Visual Attributes",
+        "interactions": "Rotating Cells / Buttons",
+        "convolutes": "–",
+        "status": "Discontinued"
+      },
+      {
+        "number": "  B_PA_004",
+        "date": "15 / 3",
+        "title": "Capturing Tension",
+        "typology": "Visual Attributes",
+        "interactions": "Canvas Interaction / Buttons",
+        "convolutes": "–",
+        "status": "Discontinued"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "03",
+    "title": "Coombining Multiple Artifacts",
+    "text": "Moving away from the direct translation of an object, some further explorations relied on a purely conceptual approach. The web of bonds connecting records to one another form an essential part of archives. Their critical examination has become central in contemporary archival discourse and shapes many narrative-focused tools. This brief experiment is build around the concept of visualising not an object on its own, but as part of a group. With the idea of shape language from previous experiments in mind, artifacts are represented through the geometry of the line. Each curve represents a different object, constructing a visual which interconnects them.",
+    "subitems": [
+      {
+        "number": "  A_AC_006",
+        "date": "20 / 3",
+        "title": "Variable Grids from Artefact Connections",
+        "typology": "Archival Connections",
+        "interactions": "Grid Drawing / Automation",
+        "convolutes": "–",
+        "status": "Discontinued"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "04",
+    "title": "Conceptual Archival Bonds",
+    "text": "Simplifying the previous experiment, these tool variants continue a conceptual approach. The framework is based on only two seperate inputs, representing the relationship between a pair of objects. The tool can be used to intersect two line variations, creating a third visualization. Conceptually, the pairings are visualised through an almost iconographic system. Since the compositions created from the intersection are constructed of simple lines, further visual parameters could be added for complexity to record attributes like color. While reworking classification systems to reinforce connections may be an approach suitable for narrative-focused tools, much of the artifact itself is lost in these experiments.",
+    "subitems": [
+      {
+        "number": "  A_AB_007",
+        "date": "20 / 3",
+        "title": "Basic Intersection of Two Artifacts",
+        "typology": "Artifact Bond",
+        "interactions": "Selectors / Sliders",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_AB_008",
+        "date": "22 / 3",
+        "title": "Intersection of Two Artifacts Affecting an Image",
+        "typology": "Artifact Bond",
+        "interactions": "Selectors / Sliders / Image",
+        "convolutes": "–",
+        "status": "Discontinued"
+      },
+      {
+        "number": "  C_AB_009",
+        "date": "22 / 3",
+        "title": "Shape from Intersection of Two Artifacts",
+        "typology": "Artifact Bond",
+        "interactions": "Selectors / Sliders",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  D_AB_010",
+        "date": "23 / 3",
+        "title": "Shape from Intersection of Two Artifacts [Continued]",
+        "typology": "Artifact Bond",
+        "interactions": "Selectors / Sliders",
+        "convolutes": "–",
+        "status": "Complete"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "05",
+    "title": "Simple Parameters; Complex Results",
+    "text": "To start centering the artifact in my experiments, I started to put together my own collections of artifacts. They were initially grouped by individual elements: lines, colors, solid shapes, letterforms, typesetting, and grid systems. With these groups as a new baseline, my next explorations focus on translating these elements into a single parametric system, which could account for a diverse visual language. First, I focused on any artifacts constructed through some kind of use of the line. To capture not only the nature of the line but also the visual impression of an artifact at the same time, I created a base function that operates like building blocks. It could be used to capture the general composition of an image and, in a second step, become a placement indicator for the visuals that would translate the use of lines. Unbeknownst to me at the time, some of my previous experiments functioned like a Lissajous curve. It describes a pattern that is generated through the superposition of a horizontal and a vertical oscillation. Since the base is made up of parametric equations, simply changing their values has a drastic effect on the visual result. The curves themselves are a familiar sight when viewed as a whole. However, greatly enlarging their path decontextualizes them from this known aesthetic form. Superimposing them onto the base composition further obfuscates their recognizable expression. Interactions with the tool result in a wide variety of line compositions, and the visual information changes drastically between the interplay of different structures and parameters. To further test the tool, various artifacts within the lines grouping were visually recorded using both the placement tool and available parameters. The chosen graphic objects range from abstract studies to more finalized implementations in order to analyze the tool’s effect in multiple scenarios. From outside impressions, the complicated base construction proved unintuitive and difficult to follow. In addition to this, applying the tool to various artifacts reveals a delicate balance between representing the knowledge gained from an object and simply recreating an image. The tool creates a temptation to copy the object.",
+    "subitems": [
+      {
+        "number": "  A_CF_011",
+        "date": "29 / 3",
+        "title": "Compositional Forms",
+        "typology": "Composition",
+        "interactions": "Placement",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_CF_012",
+        "date": "29 / 3",
+        "title": "Compositional Forms [Color]",
+        "typology": "Composition",
+        "interactions": "Placement",
+        "convolutes": "–",
+        "status": "Discontinued"
+      },
+      {
+        "number": "  C_LV_013",
+        "date": "29 / 3",
+        "title": "Line Variations within Compositional Forms",
+        "typology": "Composition / Lines",
+        "interactions": "Placement / Sliders",
+        "convolutes": "GI/GS/KWB/PB",
+        "status": "Process"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "06",
+    "title": "Detecting Typography",
+    "text": "While classifying an object is typically done by providing manual inputs, the archiving process is also accompanied by the act of scanning. The inclusion of the artifact itself was a matter I had not yet addressed but could yield interesting visual results. Additionally, the question of how technology and automation interact with artifacts while also supporting the process of archiving continues to be a central talking point within common discourse. While some archives will use machine learning to analyze an entire database in an attempt to fill a role similar to that of a curator, the technology can be used in much simpler and controlled ways. Similar to the scanner as a tool, I treated the technology as a way to isolate an image, or rather parts of it. Using typesetting as my next classification category, both the removal of a separate construction and the inclusion of the artifact were combined. The decision to address a typographic subject matter was deliberate. The choice of typeface alone carries a lot of weight, and the measured removal of this choice set a limitation. To work around this limitation, I relied on text recognition models to create a starting element, which should function as a new design element that can be further manipulated. The initial javascript library [Tesseract OCR] was unable to accurately detect most typographic elements. While it yielded interesting visuals, the machine learning based [Paddle OCR] provided the design elements I required.",
+    "subitems": [
+      {
+        "number": "  A_TI_014",
+        "date": "20 / 4",
+        "title": "Basic Text Detection",
+        "typology": "Typesetting",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/KWB/PB/VD",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_TI_015",
+        "date": "21 / 4",
+        "title": "Text and Value Detection",
+        "typology": "Typesetting",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS",
+        "status": "Forked"
+      },
+      {
+        "number": "  C_TI_016",
+        "date": "21 / 4",
+        "title": "Sorting Text Elements [Tesseract OCR]",
+        "typology": "Typesetting",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GR/GS/KWB/PB",
+        "status": "Discontinued"
+      },
+      {
+        "number": "  D_TI_017",
+        "date": "21 / 4",
+        "title": "Sorting Text Elements [Paddle OCR]",
+        "typology": "Typesetting",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/KWB/PB",
+        "status": "Forked"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "07",
+    "title": "Manipulating Typographic Components",
+    "text": "Using the detected text elements as components, one is stretched across the canvas, taking on an abstract character. Further development within the component aspect of the tool explores these abstraction levels of the typography itself and the role of the image in the outcome of the automatization process. Input of various artifacts reveals the differences in readability. The question arises whether the elements need to be readable or simply recognizable as text. Rather than outright copying as some earlier experiments had done, the abstraction created something new. These experiments mark a shift towards ideation and start to address the role of the archivist as a practitioner.",
+    "subitems": [
+      {
+        "number": "  A_TI_018",
+        "date": "27 / 4",
+        "title": "Typographic Element as Abstract Object",
+        "typology": "Typesetting / Abstraction",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/KWB/PB/PvA/VD",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_TI_019",
+        "date": "27 / 4",
+        "title": "Typographic Element as Readable Object",
+        "typology": "Typesetting / Abstraction",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/PB",
+        "status": "Forked"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "08",
+    "title": "Mapping Typographic Components",
+    "text": "Now that the base had been established, further visual exploration focused on visual expression. However, working with the complicated framework of machine learning models limited my freedom in visual expression. Freely manipulating the code became increasingly challenging. As a solution, subsequent tool versions map the stretched component to a dot grid. This approach reintroduced simple elements into the code structure.",
+    "subitems": [
+      {
+        "number": "  A_TI_020",
+        "date": "01 / 5",
+        "title": "Text Element Mapped to Grid",
+        "typology": "Typesetting / Repurposing",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/PB/PvA",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_TI_021",
+        "date": "01 / 5",
+        "title": "Text Element Mapped to Grid [Continued]",
+        "typology": "Typesetting / Repurposing",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/PB",
+        "status": "Process"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "09",
+    "title": "Automated Visuals",
+    "text": "Questions of automation are central to archives. As they grow in size, efficiency becomes all the more important. The quesion then is how much of these tools are manual interactions, and how much is left to machinistic processes. Can an automatic progression still tell us something about an artifact and people's inerpretation of it? As the interaction with this tool was increasingly left to the tool, so did the interaction with the artifacts feel increasingly distant.",
+    "subitems": [
+      {
+        "number": "  A_TI_022",
+        "date": "04 / 5",
+        "title": "Grid Mapping Automata [Size]",
+        "typology": "Typesetting / Automation",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS",
+        "status": "Discontinued"
+      },
+      {
+        "number": "  B_TI_023",
+        "date": "04 / 5",
+        "title": "Grid Mapping Automata [Value]",
+        "typology": "Typesetting / Automation",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS",
+        "status": "Discontinued"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "10",
+    "title": "Visual Playgrounds",
+    "text": "Altering the underlying code manually produced a wider and more surprising range of results. By mere accident, a canvas with an uneven number of columns slants the dot grid. In some instances, the visual reminds me of an italic cut; other times, I relate it to the script found in the artifact I had used. On rotation, some visuals produce a kind of rag, mimicking paragraph structures. While the line experiments had a separate container to sit in, the typesetting tool directly constructs the visual classification from the concept of typography. Being reliant on an artifact's visuals can have an impact on the actual readability, lending further credit to a system that lends an impression of type rather than necessarily relying on readable text. Perhaps most importantly, I started to enjoy the process of handling an artifact, trying to understand its point of interest, and using the tool I had created to try to record that which I had learned.",
+    "subitems": [
+      {
+        "number": "  A_TI_024",
+        "date": "04 / 5",
+        "title": "Grid Mapping",
+        "typology": "Recreation",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/KWB/PB/PvA/VD",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_TI_025",
+        "date": "04 / 5",
+        "title": "Grid Mapping and Invertion",
+        "typology": "Recreation",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS/KWB/PB",
+        "status": "Complete"
+      },
+      {
+        "number": "  C_TI_026",
+        "date": "04 / 5",
+        "title": "Grid Mapping Slanted",
+        "typology": "Recreation",
+        "interactions": "Sliders / Image / Automation",
+        "convolutes": "GS",
+        "status": "Complete"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "11",
+    "title": "Reintroducing Text",
+    "text": "I considered the typographic manipulation the most successful explorations to date, and yet there were many open questions and flaws in my practical research that had become hard to ignore. Up until this moment, I had consciously been searching for the ideal visual classification system. A tool environment that could be used to record graphic design artifacts based on their visually encoded knowledge. Yet a lot of the intriguing details I had encountered were so individual, they proved nearly impossible to codify into a narrow parametric system. Subconciously, I had slowly found a tool that enriched my personal engagement with the artifacts, solidifying their intrinsic value in my memory and visualizing my interpretation onto a tangible canvas. However, I still wanted the results from the tool to exist outside a one-person interaction. After all, archives do best when their knowledge can be distributed and different narratives are given the space to coexist. Now that my aim had shifted from a purely visual classification towards establishing a dialog, I focused on reintroducing a readable layer that would both position the reinterpretation as a public record and solve the issue of capturing details too individual to codify. This first experiment's focus lies on the text itself, and how a coding environment could generate different layouts through algorithms. However, relegating too much of the visual process to the machine results in a loss of information about the artifact.",
+    "subitems": [
+      {
+        "number": "  A_TI_027",
+        "date": "24 / 5",
+        "title": "XOR Operators",
+        "typology": "Algorithm",
+        "interactions": "Sliders",
+        "convolutes": "GS",
+        "status": "Discontinued"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "12",
+    "title": "Text as Notation Layer",
+    "text": "Language can codify complex information, requiring no further teaching insofar as the reader can understand what is written. Having worked with predominantly typographic archival material for a while at this point, it also seemed appropriate to explore the classification concept through generative layouts and experimental typesetting. In treating typography as a visual element, it could function as a complex communicator while still adhering to the concept of the image as a trigger. While the previous experiment lacked visual variety through the limited algorithmic function, this set of tool versions counteracts this issue through more complex interactions. Formulas can be changed and rewritten, while the generated patterns act as a sort of drawing tool. Details about the artifact can be mapped to the grey values of these patterns.",
+    "subitems": [
+      {
+        "number": "  A_TI_028",
+        "date": "31 / 5",
+        "title": "Bitwise Algorithms as Drawing Tool",
+        "typology": "Algorithm / Notation",
+        "interactions": "Selectors / Sliders / Input / Drawing",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_TI_029",
+        "date": "31 / 5",
+        "title": "Mapping Text to Algorithmic Patterns",
+        "typology": "Algorithm / Notation",
+        "interactions": "Selectors / Sliders / Input / Drawing",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  C_TI_030",
+        "date": "31 / 5",
+        "title": "Mapping Text Grid Cells to Algorithmic Patterns",
+        "typology": "Algorithm / Notation",
+        "interactions": "Selectors / Sliders / Input / Drawing",
+        "convolutes": "GS",
+        "status": "Discontinued"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "13",
+    "title": "Notation Layout from Artifact",
+    "text": "In the previous round of experiments, the artifacts themselves become distorted and unrecognizable. The connection is established through an interpretative creative process. For these layout experiments, I aimed for a closer link between the visualization and the object as a graphic image. Utilizing the same hierarchical structure of machine reading followed by human interaction, the tool detects pixel color values to mimic an artifact’s base composition. Dividing the canvas into a grid, each cell grabs the median value of the artifact’s corresponding section, abstracting its composition. The text could then be placed either above or below the value’s threshold, effectively mapping it to the composition of the image, while grid density could be manually adjusted. The loose rules I had set for the actual text showed the range of its use. Using the textbox as a creative tool, I intuitively added notes ranging in length and content. As the text goes from long sentences to abstract titles and characters, its purpose changes from being read to being interpreted. Longer notes would usually take on an instructive tone, stating precisely what I was noticing. Conversely, text reduced to keywords often fulfilled a title function and alluded to specific characteristics, rather than being outright descriptive.  An abstraction through creative language disconnects the representation from the artifact in a literal sense. On the other hand, it would require closer inspection of the original artifact to be fully understood, thereby provoking a more involved interaction. In all cases, the textual reformulation and layout interaction caused a deeper understanding of the artifact itself, solidifying their knowledge in my memory and recording it onto a visual surface. As a first test, some notation layers were combined with a more abstract and individual layer from some of the previous tool environments.",
+    "subitems": [
+      {
+        "number": "  A_NS_031",
+        "date": "5 / 7",
+        "title": "Value Detection via Grid",
+        "typology": "Layout / Notation",
+        "interactions": "Sliders",
+        "convolutes": "–",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_NS_032",
+        "date": "8 / 7",
+        "title": "Small Typography",
+        "typology": "Layout / Notation",
+        "interactions": "Sliders / Input",
+        "convolutes": "GS/GVP/KWB/WW",
+        "status": "Forked"
+      },
+      {
+        "number": "  C_NS_033",
+        "date": "8 / 7",
+        "title": "Large Typography",
+        "typology": "Layout / Notation",
+        "interactions": "Sliders / Input",
+        "convolutes": "CP/GVP/PvA/WW",
+        "status": "Forked"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "14",
+    "title": "Refining Separate Tool Layers",
+    "text": "In a step towards a concluding tool, The notation experiment attempts to add more intention to the layout, while the interpretative tool adds more flexibility in its interactions. Providing an additional typesetting variable pertaining to the object itself could solidify the notation layer as a more rational element. At the same time, a rudimentary code snippet editor was implemented to reflect the manual code editing which had transformed my interaction with the artifacts and tools into one of ideation.",
+    "subitems": [
+      {
+        "number": "  A_TI_034",
+        "date": "27 / 7",
+        "title": "Interaction Interface",
+        "typology": "Interpretation / Ideation ",
+        "interactions": "Sliders / Image / Automation / Input / Selectors",
+        "convolutes": "GS",
+        "status": "Forked"
+      },
+      {
+        "number": "  B_NS_035",
+        "date": "30 / 7",
+        "title": "Notation Typography",
+        "typology": "Layout / Notation",
+        "interactions": "Sliders / Input / Canvas Interaction / Automation",
+        "convolutes": "GR",
+        "status": "Forked"
+      }
+    ]
+  },
+
+
+
+  {
+    "number": "15",
+    "title": "Artifact as Tool",
+    "text": "Inspired by the IDCE archive’s finding aid, which lists both image and text separately, I sought to combine the two layers by using both the abstract typographic visuals and the notation layout. While treated as equal in their informational value, our interaction with visual objects in the archive follows a certain hierarchy. We first process the space in order to navigate it. In the tool, this constitutes the canvas. Then, we encounter the first visual impressions of the individual material, an intrinsic act mirrored by the typographic abstraction. A detailed inspection of the artifact follows and is reflected in the text layout tool. These steps eventually culminate in the repurposing of knowledge retained from the visuals, the creation of something new.",
+    "subitems": [
+      {
+        "number": "  A_FT_036",
+        "date": "2 / 8",
+        "title": "In Visible Archives",
+        "typology": "Final Tool",
+        "interactions": "All",
+        "convolutes": "GR/PvA/...",
+        "status": "Process"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1004 @@
+{
+  "01A_PA_001": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png"
+      ]
+    }
+  ],
+  "01B_PA_002": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png"
+      ]
+    }
+  ],
+  "01C_PA_005": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "02 MM_VD_0025",
+      "title": "MM_VD_0025",
+      "images": [
+        "03.jpg",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png",
+        "10.png"
+      ]
+    }
+  ],
+  "02A_PA_003": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png"
+      ]
+    }
+  ],
+  "02B_PA_004": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.gif",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png"
+      ]
+    }
+  ],
+  "03A_AB_006": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": []
+    }
+  ],
+  "04A_AB_007": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png"
+      ]
+    }
+  ],
+  "04B_AB_008": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.mp4"
+      ]
+    }
+  ],
+  "04C_AB_009": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png",
+        "10.png",
+        "11.png",
+        "12.png"
+      ]
+    }
+  ],
+  "04D_AB_010": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png",
+        "10.png",
+        "11.png",
+        "12.png",
+        "13.png",
+        "14.png",
+        "15.png",
+        "16.png"
+      ]
+    }
+  ],
+  "05A_CF_011": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png"
+      ]
+    }
+  ],
+  "05B_CF_012": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png"
+      ]
+    }
+  ],
+  "05C_LV_013": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.mp4",
+        "02.mp4",
+        "03.mp4",
+        "04.mp4",
+        "05.mp4",
+        "06.png",
+        "07.png",
+        "08.png"
+      ]
+    },
+    {
+      "folder": "02 PB_00129",
+      "title": "PB_00129",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png"
+      ]
+    },
+    {
+      "folder": "03 KWB11_0047_b",
+      "title": "KWB11_0047_b",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "04 GI0123_A",
+      "title": "GI0123_A",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png",
+        "10.png"
+      ]
+    },
+    {
+      "folder": "05 GS0057_F",
+      "title": "GS0057_F",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png"
+      ]
+    }
+  ],
+  "06A_TI_014": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "02 KWB3_0056",
+      "title": "KWB3_0056",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "03 GS0011",
+      "title": "GS0011",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "04 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "05 VD00473",
+      "title": "VD00473",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "06 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    }
+  ],
+  "06B_TI_015": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    }
+  ],
+  "06C_TI_016": [
+    {
+      "folder": "01 GR00020",
+      "title": "GR00020",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.mp4"
+      ]
+    },
+    {
+      "folder": "02 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "03 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png"
+      ]
+    },
+    {
+      "folder": "04 KWB3_0056",
+      "title": "KWB3_0056",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "05 GS0011",
+      "title": "GS0011",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "06 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    }
+  ],
+  "06D_TI_017": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "03 KWB3_0056",
+      "title": "KWB3_0056",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "04 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    }
+  ],
+  "07A_TI_018": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "02 GS0011",
+      "title": "GS0011",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "03 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "04 KWB3_0056",
+      "title": "KWB3_0056",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "05 PB_00045",
+      "title": "PB_00045",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "06 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png"
+      ]
+    },
+    {
+      "folder": "07 PvAL1.2.3",
+      "title": "PvAL1.2.3",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "08 VD00487_11",
+      "title": "VD00487_11",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png"
+      ]
+    }
+  ],
+  "07B_TI_019": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "03 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    }
+  ],
+  "08A_TI_020": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "03 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "04 PvA.3.1.11",
+      "title": "PvA.3.1.11",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png"
+      ]
+    }
+  ],
+  "08B_TI_021": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png"
+      ]
+    },
+    {
+      "folder": "03 PB_00045",
+      "title": "PB_00045",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "04 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    }
+  ],
+  "09A_TI_022": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    }
+  ],
+  "09B_TI_023": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.mp4"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    }
+  ],
+  "10A_TI_024": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.mp4"
+      ]
+    },
+    {
+      "folder": "02 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png"
+      ]
+    },
+    {
+      "folder": "03 KWB3_0056",
+      "title": "KWB3_0056",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "04 PB_00045",
+      "title": "PB_00045",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "05 PB_00147",
+      "title": "PB_00147",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "06 VD00473",
+      "title": "VD00473",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "07 VD00487_11",
+      "title": "VD00487_11",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "08 PvA.3.1.11",
+      "title": "PvA.3.1.11",
+      "images": [
+        "01.png",
+        "02.png"
+      ]
+    }
+  ],
+  "10B_TI_025": [
+    {
+      "folder": "01 GS0011",
+      "title": "GS0011",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "02 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png"
+      ]
+    },
+    {
+      "folder": "03 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "04 KWB3_0056",
+      "title": "KWB3_0056",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "05 PB_00045",
+      "title": "PB_00045",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    }
+  ],
+  "10C_TI_026": [
+    {
+      "folder": "01 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png"
+      ]
+    }
+  ],
+  "11A_TI_027": [
+    {
+      "folder": "01 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    }
+  ],
+  "12A_TI_028": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png",
+        "10.mp4"
+      ]
+    }
+  ],
+  "12B_TI_029": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.mp4",
+        "02.mp4",
+        "03.mp4",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png"
+      ]
+    }
+  ],
+  "12C_TI_030": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "02 GS0013",
+      "title": "GS0013",
+      "images": [
+        "01.jpg",
+        "02.png"
+      ]
+    },
+    {
+      "folder": "03 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.mp4"
+      ]
+    }
+  ],
+  "13A_NS_031": [
+    {
+      "folder": "01 No Artifact",
+      "title": "No Artifact",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    }
+  ],
+  "13B_NS_032": [
+    {
+      "folder": "01 KWB1_0049",
+      "title": "KWB1_0049",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "02 GVP0025",
+      "title": "GVP0025",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "03 WW0099",
+      "title": "WW0099",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "04 WW0141",
+      "title": "WW0141",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "05 GS0048_F",
+      "title": "GS0048_F",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    }
+  ],
+  "13C_NS_033": [
+    {
+      "folder": "01 PvA.3.1.11",
+      "title": "PvA.3.1.11",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png"
+      ]
+    },
+    {
+      "folder": "02 GVP0025",
+      "title": "GVP0025",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    },
+    {
+      "folder": "03 WW0099",
+      "title": "WW0099",
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png"
+      ]
+    },
+    {
+      "folder": "04 CP_00005_P04",
+      "title": "CP_00005_P04",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png"
+      ]
+    }
+  ],
+  "14A_TI_034": [
+    {
+      "folder": "01 GS0068_03",
+      "title": "GS0068_03",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png",
+        "09.png",
+        "10.png",
+        "11.png"
+      ]
+    }
+  ],
+  "14B_NS_035": [],
+  "15A_FT_036": [
+    {
+      "folder": "01 GR00007",
+      "title": "GR00007",
+      "images": [
+        "01.jpg",
+        "02.png",
+        "03.png"
+      ]
+    }
+  ]
+}

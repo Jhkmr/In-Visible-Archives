@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modular Grid Tool</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div id="root">
+    <div class="app">
+      <div class="canvas-container"></div>
+      <div class="panel">
+        <div class="panel-section">
+          
+          <h2>tools</h2>
+
+          <div class="buttons-section">
+          <h3>selected</h3>
+          <button id="rotateBtn">rotate [r]</button>
+          
+          <h3 style="margin-top: 20px;">corners</h3>
+          <div class="slider-container">
+            <input type="range" id="cornerSlider" min="3" max="12" value="3">
+            <span id="cornerValue">3</span>
+          </div>
+          
+          <h3 style="margin-top: 20px;">curve</h3>
+          <div class="slider-container">
+            <input type="range" id="curveSlider" min="-3" max="3" step="0.1" value="0">
+            <span id="curveValue">0</span>
+          </div>
+          
+          <h3 style="margin-top: 20px;">canvas</h3>
+          <button id="rotateAllBtn">rotate all [shift+r]</button>
+          
+          <h3 style="margin-top: 8px;">corners</h3>
+          <div class="slider-container">
+            <input type="range" id="cornerSliderAll" min="3" max="12" value="3">
+            <span id="cornerValueAll">3</span>
+          </div>
+          
+          <h3 style="margin-top: 8px;">curve</h3>
+          <div class="slider-container">
+            <input type="range" id="curveSliderAll" min="-3" max="3" step="0.1" value="0">
+            <span id="curveValueAll">0</span>
+          </div>
+          
+          <h3 style="margin-top: 20px;">save</h3>
+          <button id="saveBtn">print</button>
+          </div>
+        </div>
+        <div class="panel-section">
+
+          <h2>prints</h2>
+
+          <div class="images-section">
+            <div id="imagesContainer" class="images-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+  
+</body>
+</html>

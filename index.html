@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In Visible Archives</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Site Header -->
+      <header class="site-header">
+        <div class="title" id="site-title">In Visible Archives</div>
+        <div class="navigation">
+          Returning to Visual Impressions in Graphic Design Archives and Creation as a Dialog
+        </div>
+        <div class="text" id="table-text">
+          <p>
+            Throughout most of history, archives served first and foremost as places of order and narrative control, situated in an ecosystem defined by written language. In modern times, logistical frameworks in the shape of filing systems, standardized containers, and protective equipment has solidified them as a highly structured and nearly impenetrable space. This is reflected in the infrastructure of the graphic design archive, which prioritizes preservation over visual impressions, directing its access towards historians and researchers. However, graphic artifacts constitute a valuable source of knowledge for practitioners in the field, calling into question the text-based foundation underlying current archival practices.
+            Drawing on firsthand experiences, this thesis explores the intersection of designer and archivist through visual systems. Contextualized within a web environment, the research draws on the interaction with digital tools as a central aspect of both contemporary archival and design practices. It investigates how manual interactions within a tool-based environment can shift the archive's function towards an involved visual dialog, thereby documenting internal processes onto both memory and image. The project positions the artifact itself as an interlocutor: a tool that triggers ideation and reintroduces the archive's epistemic structures into the creative process of practitioners.
+          </p>
+        </div>
+        <div class="text gallery-text hidden" id="gallery-text">
+          <p></p>
+        </div>
+        <div class="chapter bottom" id="prev-btn">Tools</div>
+        <div class="navigation bottom" id="next-btn">Context</div>
+      </header>
+
+      <!-- Table Component -->
+      <div id="table-view" class="--ready">
+        <!-- Table Header -->
+        <div class="ui-data-table-row --header grid-system">
+          <div class="column col-span-1">
+            <button id="filter-btn" class="filter-btn">Expand</button>
+          </div>
+          <div class="column sortable active num col-span-2" data-key="number">Nr</div>
+          <div class="column sortable num col-span-2" data-key="date">Date</div>
+          <div class="column sortable col-span-6" data-key="title">Title</div>
+          <div class="column sortable col-span-4 list-only" data-key="typology">
+            Typology
+          </div>
+          <div class="column detail-only col-span-4" id="images-header">Images</div>
+          <div class="column sortable col-span-5 list-only" data-key="interactions">
+            Interactions
+          </div>
+          <div class="column sortable num col-span-3 list-only" data-key="convolutes">
+            Convolutes
+          </div>
+          <div class="column col-span-1 list-only">Status</div>
+        </div>
+
+        <!-- Table Body -->
+        <div id="table-body" class="ui-data-table__body">
+          <!-- Rows injected -->
+        </div>
+      </div>
+
+      <!-- Detail Image Grid -->
+      <div id="detail-image-grid" class="detail-image-grid grid-system-img hidden">
+        <!-- Images injected -->
+      </div>
+    </div>
+
+    <!-- Hover image overlay -->
+    <div id="hover-image-overlay">
+      <img id="hover-image" src="" alt="" />
+      <video id="hover-video" src="" muted loop playsinline></video>
+    </div>
+  </body>
+</html>

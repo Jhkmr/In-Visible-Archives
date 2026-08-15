@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeImage — LowQ</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+  <script>
+    const Module = {
+      onRuntimeInitialized() {
+        window.cvReadyFlag = true;
+        console.log("OpenCV ready");
+      }
+    };
+    window.cvReadyFlag = false;
+  </script>
+  <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
+</html>

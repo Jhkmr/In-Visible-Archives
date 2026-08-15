@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bond Lissajous</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js"></script>
+</head>
+<body>
+  <div id="root">
+    <div class="app">
+      <div class="canvas-container" id="canvas-container"></div>
+      <div class="panel">
+        <div class="panel-section">
+          <h2>tools</h2>
+          <div class="buttons-section">
+            <span id="selected-label">select an oscillator</span>
+            <svg id="editor-canvas" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div class="tension-row">
+              <input type="range" id="tensionSlider" min="0" max="100" step="1" value="0">
+              <span id="tensionLabel">0</span>
+            </div>
+            <button id="registerBtn">register</button>
+            <button id="clearEditorBtn">clear</button>
+            <button id="saveBtn">print</button>
+            <button id="pauseBtn">pause</button>
+          </div>
+        </div>
+        <div class="panel-section2">
+          <h2>prints</h2>
+          <div class="images-section" id="info-section"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/sketch.js"></script>
+</body>
+</html>

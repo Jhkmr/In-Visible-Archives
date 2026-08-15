@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Type to Bit Algorithm</title>
+  <link rel="stylesheet" href="../../fonts.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <div class="canvas-wrap"></div>
+    <div class="panel">
+      <div class="group">
+        <button id="btnLoad">Load</button>
+        <button id="btnClear">Clear</button>
+        <button id="btnSave">Save</button>
+      </div>
+
+      <div class="group">
+        <div class="counter">
+          <span>Rows</span>
+          <button id="btnRowMinus">−</button>
+          <button id="btnRowPlus">+</button>
+        </div>
+        <div class="counter">
+          <span>Columns</span>
+          <button id="btnColMinus">−</button>
+          <button id="btnColPlus">+</button>
+        </div>
+        <div class="counter">
+          <span>Tile Scale</span>
+          <button id="btnScaleMinus">−</button>
+          <button id="btnScalePlus">+</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <button id="modeBtn">Mode: Progression</button>
+        <button id="imgToggleBtn">Image: Off</button>
+      </div>
+
+      <div class="group">
+        <label>Formula
+          <input type="text" id="customFormula" placeholder="e.g. (x^y)*(x^y)" spellcheck="false" autocomplete="off">
+          <span id="formulaError"></span>
+        </label>
+      </div>
+
+      <div class="group">
+        <button id="btnToggleView">View: Pattern</button>
+      </div>
+
+      <div class="group">
+        <label>Number
+          <input type="text" id="textNumber" placeholder="028" spellcheck="false" autocomplete="off">
+        </label>
+        <label>Phrase
+          <input type="text" id="textPhrase" placeholder="Short phrase" spellcheck="false" autocomplete="off">
+        </label>
+        <label>Long text
+          <input type="text" id="textLong" placeholder="Longer sentence or description" spellcheck="false" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="sliders">
+        <label>R
+          <div class="slider-wrap">
+            <input type="range" id="sliderR" min="0" max="255" step="1" value="0">
+            <div class="slider-thumb" id="sliderR-thumb">[ 0 ]</div>
+          </div>
+        </label>
+        <label>G
+          <div class="slider-wrap">
+            <input type="range" id="sliderG" min="0" max="255" step="1" value="0">
+            <div class="slider-thumb" id="sliderG-thumb">[ 0 ]</div>
+          </div>
+        </label>
+        <label>B
+          <div class="slider-wrap">
+            <input type="range" id="sliderB" min="0" max="255" step="1" value="0">
+            <div class="slider-thumb" id="sliderB-thumb">[ 0 ]</div>
+          </div>
+        </label>
+        <label>A
+          <div class="slider-wrap">
+            <input type="range" id="sliderA" min="0" max="255" step="1" value="0">
+            <div class="slider-thumb" id="sliderA-thumb">[ 0 ]</div>
+          </div>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="sketch.js"></script>
+  <script>
+    function updateSliderThumb(input) {
+      const thumb = document.getElementById(input.id + '-thumb');
+      if (!thumb) return;
+      const min = parseFloat(input.min);
+      const max = parseFloat(input.max);
+      const val = parseFloat(input.value);
+      const pct = (val - min) / (max - min);
+      // Offset accounts for the thumb's own half-width so it doesn't overflow edges
+      const trackWidth = input.offsetWidth;
+      const thumbWidth = thumb.offsetWidth;
+      const offset = pct * (trackWidth - thumbWidth) + thumbWidth / 2;
+      thumb.style.left = offset + 'px';
+      thumb.textContent = '[ ' + val + ' ]';
+    }
+
+    document.querySelectorAll('.slider-wrap input[type=range]').forEach(input => {
+      updateSliderThumb(input);
+      input.addEventListener('input', () => updateSliderThumb(input));
+    });
+
+    // Re-position on resize (track width changes)
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.slider-wrap input[type=range]').forEach(updateSliderThumb);
+    });
+  </script>
+</body>
+
+</html>

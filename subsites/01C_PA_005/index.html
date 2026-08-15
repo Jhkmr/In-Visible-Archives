@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modular Grid Tool – Reading Direction</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div id="root">
+    <div class="app">
+      <div class="canvas-container"></div>
+      <div class="panel">
+        <div class="panel-section">
+          
+          <h2>tools</h2>
+
+          <div class="buttons-section">
+          <div class="mode-section">
+          <select id="viewModeSelect">
+            <option value="skeleton">skeleton</option>
+            <option value="lines">lines</option>
+          </select>
+          <div id="lineStyleRow" class="line-style-row" style="display:none">
+            <input type="range" id="lineStyleSlider" min="0" max="4" step="1" value="0">
+            <span id="lineStyleLabel">straight</span>
+          </div>
+          </div>
+          <h3>selected</h3>
+          <button id="rotateBtn">rotate [r]</button>
+          <button id="toggleTypeBtn">angular|level [e]</button>
+          <button id="levelHatchDirBtn" class="lines-only" style="display:none">h|v lines [t]</button>
+          <button id="clearBtn">clear [x]</button>
+          <h3>canvas</h3>
+          <button id="toggleAllBtn">angular|level all</button>
+          <button id="invertBtn">invert all</button>
+          <button id="hideUneditedBtn">hide unedited</button>
+          <button id="saveConfigBtn">save</button>
+          <button id="loadConfigBtn">load</button>
+          <input type="file" id="loadConfigInput" accept=".json" style="display:none">
+          <button id="saveBtn">print</button>
+          </div>
+        </div>
+        <div class="panel-section">
+
+          <h2>image</h2>
+
+          <div class="images-section">
+            <div id="imagesContainer" class="images-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+  
+</body>
+</html>

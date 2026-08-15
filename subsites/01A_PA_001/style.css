@@ -1,0 +1,36 @@
+body{
+    margin:0;
+    overflow:hidden;
+    font-family:sans-serif;
+    background:#f4f4f4;
+}
+
+.app{
+    display:flex;
+    height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    padding:20px;
+    overflow-y:auto;
+    border-left:1px solid #000000;
+}
+
+/* Canvas area */
+
+.canvas-container{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px;
+    box-sizing:border-box;
+}
+
+canvas{
+    background:white;
+}

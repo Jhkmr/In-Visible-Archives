@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>036</title>
+  <link rel="stylesheet" href="../../fonts.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+  <script>
+    const Module = {
+      onRuntimeInitialized() {
+        window.cvReadyFlag = true;
+        console.log("OpenCV ready");
+        if (window._p5SourceImageReady) runDetect();
+      }
+    };
+    window.cvReadyFlag = false;
+  </script>
+  <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
+
+  <div class="app">
+    <div class="tool-title">
+      <span>In Visible Archives</span>
+    </div> 
+
+    <div class="tool-title">
+      <span>Controls</span>
+    </div> 
+
+    <div class="tool-title">
+      <span>Artifact</span>
+    </div> 
+
+    <div class="canvas-wrap"></div>
+
+    <div class="image-preview">
+      <img id="imagePreview" alt="">
+    </div>
+
+    <div class="panel-controls">
+      <div class="group image-controls">
+        <span>Image</span>
+        <button id="btnLoad">Load</button>
+        <button id="btnClear">Clear</button>
+        <button id="btnSave">Save</button>
+      </div>
+
+      <div class="group canvas-controls">
+        <span>Canvas</span>
+        <button id="btnOrientation">Orientation: Portrait</button>
+        <button id="imgToggleBtn">Image: Off</button>
+        <button id="btnCombinationGridToggle">Grid: On</button>
+        <button id="btnCrossPreviewProgression" data-mode="progression">Preview: On</button>
+        <button id="btnCrossPreviewNotes" data-mode="notes">Preview: On</button>
+        <button id="btnCrossPreviewHeadlines" data-mode="headlines">Preview: On</button>
+        <div class="inline-field">
+          <span class="inline-field-label">Background:</span>
+          <input type="text" id="canvasBgColorInput" placeholder="#ffffff" value="#ffffff">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mode-tabs">
+      <span class="tool-title">Layers</span>
+      <div class="mode-tabs-group">
+        <button id="tabBase">(Base)</button>
+        <button id="tabProgression">Form</button>
+      </div>
+      <div class="mode-tabs-group">
+        <button id="tabHeadlines">Title Notes</button>
+        <button id="tabNotes">Text Notes</button>
+      </div>
+      <div class="mode-tabs-group">
+        <button id="tabCombination">Combination</button>
+      </div>
+      
+
+
+      <div class="group group--configuration" data-mode="progression">
+        <span>Configuration</span>
+        <button id="dotFillBtn">Render: Outline</button>
+        <button id="areaModeBtn">Area: Default</button>
+        <button id="slantBtn">Slant: Regular</button>
+        <button id="randomizeWordBtn">Word: Randomize</button>
+      </div>
+      <div class="group group--extra" data-mode="progression">
+        <span>Presets</span>
+        <div id="dotTemplateList" class="template-list"></div>
+      </div>
+      <div class="group group--editable" id="shapeEditorGroup" data-mode="progression">
+        <span>Editor</span>
+        <button id="dotRenderUpdateBtn">Update</button>
+        <textarea id="dotRenderEditor" rows="14" spellcheck="false"></textarea>
+
+      </div>
+
+      <div class="group group--configuration" data-mode="notes">
+        <span>Configuration</span>
+        <button id="btnRandomizeCells">Randomize</button>
+        <button id="btnRepeatToggle">Repeat: On</button>
+        <button id="btnRotationToggle">Rotation: Off</button>
+        <button id="noteFontBtn">Font: Default</button>
+        <div class="inline-field">
+          <span class="inline-field-label">Color:</span>
+          <input type="text" id="noteTextColorInput" placeholder="#000000" value="#000000">
+        </div>
+      </div>
+      <div class="group group--editable" data-mode="notes">
+        <span>Text</span>
+        <div class="text-wrap">
+          <input type="text" id="textInput" placeholder="Something to note…">
+        </div>
+        <button id="btnOverrideText">Override</button>
+        <button id="btnAddText">Add</button>
+      </div>
+
+      <div class="group group--configuration" data-mode="headlines">
+        <span>Configuration</span>
+        <button id="headlineFontBtn">Font: Default</button>
+        <div class="inline-field">
+          <span class="inline-field-label">Color:</span>
+          <input type="text" id="headlineTextColorInput" placeholder="#000000" value="#000000">
+        </div>
+      </div>
+      <div class="group group--editable" data-mode="headlines">
+        <span>Text</span>
+        <div class="text-wrap">
+          <input type="text" id="headlineTextInput" placeholder="A headline…">
+        </div>
+        <button id="btnHeadlineOverrideText">Override</button>
+        <button id="btnHeadlineAddText">Add</button>
+      </div>
+      <div class="group group--extra" data-mode="headlines">
+        <span>Active Texts</span>
+        <div id="headlineTextList" class="headline-text-list"></div>
+      </div>
+
+      <div class="group group--configuration" data-mode="combination">
+        <span>Configuration</span>
+        <button id="btnCombinationSwap">Order: Progression / Notes / Headlines</button>
+      </div>
+      <div class="group group--extra" data-mode="combination">
+        <span>Blend Modes</span>
+        <button id="btnCombinationBlendProgression">Blend Progression: Normal</button>
+        <button id="btnCombinationBlendNotes">Blend Notes: Normal</button>
+        <button id="btnCombinationBlendHeadlines">Blend Headlines: Normal</button>
+      </div>
+    </div>
+
+    <div class="panel-sliders">
+      <div class="slider-row" data-mode="progression">
+        <span class="slider-id">A</span>
+        <span class="slider-name">Spacing</span>
+        <div class="slider-wrap">
+          <input type="range" id="dotSpacingSlider" min="1" max="15" step="1" value="5">
+          <div class="slider-thumb" id="dotSpacingSlider-thumb">[5]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="progression">
+        <span class="slider-id">A</span>
+        <span class="slider-name">Active Size</span>
+        <div class="slider-wrap">
+          <input type="range" id="activeDotSizeSlider" min="1" max="100" step="1" value="15">
+          <div class="slider-thumb" id="activeDotSizeSlider-thumb">[15]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="base progression">
+        <span class="slider-id">B</span>
+        <span class="slider-name">Padding X</span>
+        <div class="slider-wrap">
+          <input type="range" id="padSliderX" min="0" max="1" step="0.01" value="0.11">
+          <div class="slider-thumb" id="padSliderX-thumb">[0.11]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="base progression">
+        <span class="slider-id">B</span>
+        <span class="slider-name">Padding Y</span>
+        <div class="slider-wrap">
+          <input type="range" id="padSliderY" min="0" max="1" step="0.01" value="0.16">
+          <div class="slider-thumb" id="padSliderY-thumb">[0.16]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="base progression">
+        <span class="slider-id">B</span>
+        <span class="slider-name">Threshold</span>
+        <div class="slider-wrap">
+          <input type="range" id="threshSlider" min="0" max="255" step="1" value="90">
+          <div class="slider-thumb" id="threshSlider-thumb">[90]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="base progression">
+        <span class="slider-id">C</span>
+        <span class="slider-name">Blur</span>
+        <div class="slider-wrap">
+          <input type="range" id="blurSlider" min="1" max="21" step="2" value="3">
+          <div class="slider-thumb" id="blurSlider-thumb">[3]</div>
+        </div>
+      </div>
+
+      <div class="slider-row" data-mode="notes">
+        <span class="slider-id">D</span>
+        <span class="slider-name">Text Size</span>
+        <div class="slider-wrap">
+          <input type="range" id="noteTextSize" min="6" max="20" step="0.5" value="12">
+          <div class="slider-thumb" id="noteTextSize-thumb">[12]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="notes">
+        <span class="slider-id">D</span>
+        <span class="slider-name">Density</span>
+        <div class="slider-wrap">
+          <input type="range" id="noteDensity" min="0" max="100" step="5" value="30">
+          <div class="slider-thumb" id="noteDensity-thumb">[30]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="notes">
+        <span class="slider-id">D</span>
+        <span class="slider-name">Line Height</span>
+        <div class="slider-wrap">
+          <input type="range" id="noteLineHeight" min="0.2" max="5" step="0.05" value="0.8">
+          <div class="slider-thumb" id="noteLineHeight-thumb">[0.8]</div>
+        </div>
+      </div>
+      <div class="slider-row" data-mode="notes">
+        <span class="slider-id">D</span>
+        <span class="slider-name">Word Spacing</span>
+        <div class="slider-wrap">
+          <input type="range" id="noteWordSpacing" min="0" max="100" step="5" value="0">
+          <div class="slider-thumb" id="noteWordSpacing-thumb">[0]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dot-templates.js"></script>
+  <script src="sketch.js"></script>
+  <script>
+    function updateSliderThumb(input) {
+      const thumb = document.getElementById(input.id + '-thumb');
+      if (!thumb) return;
+      const min = parseFloat(input.min);
+      const max = parseFloat(input.max);
+      const val = parseFloat(input.value);
+      const pct = (val - min) / (max - min);
+      const trackWidth = input.offsetWidth;
+      const thumbWidth = thumb.offsetWidth;
+      const offset = pct * (trackWidth - thumbWidth) + thumbWidth / 2;
+      thumb.style.left = offset + 'px';
+      thumb.textContent = '[ ' + val + ' ]';
+    }
+
+    document.querySelectorAll('.slider-wrap input[type=range]').forEach(input => {
+      updateSliderThumb(input);
+      input.addEventListener('input', () => updateSliderThumb(input));
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.slider-wrap input[type=range]').forEach(updateSliderThumb);
+    });
+  </script>
+</body>
+
+</html>

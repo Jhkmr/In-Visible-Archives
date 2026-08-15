@@ -1,0 +1,90 @@
+Used sliders to find values which show certain forms which could be co-opted as translations:
+
+Straight Lines:
+0.5 (variable)
+5.5
+8
+
+6
+1.5
+2.1
+
+Diagonal Hashing:
+2
+3/7
+8.8
+
+Straight to wavy with occasional squigle:
+1.5
+5
+6.3
+
+4
+8
+2.4
+
+Occasional diagonal line drawn:
+1
+4
+6.3
+
+9.5
+9
+2.7
+
+4
+8
+4.7
+
+Scribbles:
+(diagonal)
+7.5
+1.5
+0.9
+
+0.5
+4
+5.6
+
+Rotations:
+1
+3
+0.9
+
+1
+3
+7.2
+
+Straight lines & concave lines abwechselnd:
+2.5
+5
+8.8
+
+
+In "confirm" mode:
+
+Straight lines overlapping with gradient effect:
+1
+2.5
+6.3
+
+Slow moving straight line clusters:
+1
+6.5
+5.8
+
+Sketched lines:
+2.5
+5
+5
+
+Sketched lines round (may not be visible always):
+10
+10
+8.8
+
+Solid to line moving slowly in grid formation:
+7.5
+6.5
+8.7
+

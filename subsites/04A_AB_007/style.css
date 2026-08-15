@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #f4f4f4;
+  color: #000000;
+  min-height: 100vh;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px 24px;
+  gap: 20px;
+}
+
+#canvas-container canvas {
+  display: block;
+  background: #f4f4f4;
+}
+
+/* Controls */
+
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #f4f4f4;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #000000;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.control-group:first-child {
+  padding-left: 0;
+}
+
+.channel-label {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  width: 12px;
+  text-align: center;
+}
+
+.channel-label.r { color: #000000; }
+.channel-label.l { color: #000000; }
+
+.control-sep {
+  font-size: 20px;
+  color: #f4f4f4;
+  font-weight: 300;
+  padding: 0 2px;
+  user-select: none;
+}
+
+select {
+  font-family: inherit;
+  font-size: 12px;
+  color: #333;
+  background: #f4f4f4;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  padding: 4px 6px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+select:hover,
+select:focus {
+  border-color: #aaa;
+}
+
+.phase-group {
+  border-left: 1px solid #ececec;
+  margin-left: 8px;
+}
+
+.control-label {
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+input[type="range"] {
+  width: 140px;
+  accent-color: #555;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+#phaseLabel {
+  font-size: 12px;
+  color: #555;
+  min-width: 32px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.2px;
+}

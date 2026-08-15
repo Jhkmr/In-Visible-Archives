@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Archive Grotesk Mono 400";
+  src: url("./fonts/ArchiveGroteskMonoTRIAL-400.woff2");
+}
+
+@font-face {
+  font-family: "Archive Grotesk Mono 400 Italic";
+  src: url("./fonts/ArchiveGroteskMonoTRIAL-Italic.woff2");
+}
+
+@font-face {
+  font-family: "Archive Grotesk 500";
+  src: url("./fonts/ArchiveGroteskTRIAL-500.woff2");
+}
+
+@font-face {
+  font-family: "Archive Grotesk 500 Italic";
+  src: url("./fonts/ArchiveGroteskTRIAL-500Italic.woff2");
+}
+
+@font-face {
+  font-family: "Archive Grotesk 700";
+  src: url("./fonts/ArchiveGroteskTRIAL-700.woff2");
+}
+
+@font-face {
+  font-family: "Archive Grotesk 700 Italic";
+  src: url("./fonts/ArchiveGroteskTRIAL-700Italic.woff2");
+}
+
+@font-face {
+  font-family: "GT Canon Mono Medium";
+  src: url("./fonts/GT-Canon-Mono-Medium.woff2");
+}

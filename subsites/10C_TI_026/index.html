@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Mapping Slanted</title>
+  <link rel="stylesheet" href="../../fonts.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+  <script>
+    const Module = {
+      onRuntimeInitialized() {
+        window.cvReadyFlag = true;
+        console.log("OpenCV ready");
+        if (window._p5SourceImageReady) runDetect();
+      }
+    };
+    window.cvReadyFlag = false;
+  </script>
+  <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
+
+  <div class="app">
+    <div class="canvas-wrap"></div>
+    <div class="panel">
+      <div class="group">
+        <button id="btnLoad">Load</button>
+        <button id="btnClear">Clear</button>
+        <button id="btnSave">Save</button>
+      </div>
+
+      <div class="group">
+        <div class="counter">
+          <span>Rows</span>
+          <button id="btnRowMinus">−</button>
+          <button id="btnRowPlus">+</button>
+        </div>
+        <div class="counter">
+          <span>Columns</span>
+          <button id="btnColMinus">−</button>
+          <button id="btnColPlus">+</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <button id="modeBtn">Mode: Progression</button>
+        <button id="imgToggleBtn">Image: Off</button>
+      </div>
+
+      <div class="sliders">
+        <label>Pad X
+          <div class="slider-wrap">
+            <input type="range" id="padSliderX" min="0" max="1" step="0.01" value="0.13">
+            <div class="slider-thumb" id="padSliderX-thumb">[ 0.13 ]</div>
+          </div>
+        </label>
+        <label>Pad Y
+          <div class="slider-wrap">
+            <input type="range" id="padSliderY" min="0" max="1" step="0.01" value="0.45">
+            <div class="slider-thumb" id="padSliderY-thumb">[ 0.45 ]</div>
+          </div>
+        </label>
+        <label>Blur
+          <div class="slider-wrap">
+            <input type="range" id="blurSlider" min="1" max="21" step="2" value="17">
+            <div class="slider-thumb" id="blurSlider-thumb">[ 17 ]</div>
+          </div>
+        </label>
+        <label>Threshold
+          <div class="slider-wrap">
+            <input type="range" id="threshSlider" min="0" max="255" step="1" value="181">
+            <div class="slider-thumb" id="threshSlider-thumb">[ 181 ]</div>
+          </div>
+        </label>
+        <label>Contrast
+          <div class="slider-wrap">
+            <input type="range" id="contrastSlider" min="0" max="400" step="1" value="100">
+            <div class="slider-thumb" id="contrastSlider-thumb">[ 100 ]</div>
+          </div>
+        </label>
+        <label>Dot spacing
+          <div class="slider-wrap">
+            <input type="range" id="dotSpacingSlider" min="3" max="15" step="1" value="3">
+            <div class="slider-thumb" id="dotSpacingSlider-thumb">[ 3 ]</div>
+          </div>
+        </label>
+        <label>Active dot
+          <div class="slider-wrap">
+            <input type="range" id="activeDotSizeSlider" min="30" max="60" step="1" value="42">
+            <div class="slider-thumb" id="activeDotSizeSlider-thumb">[ 42 ]</div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="sketch.js"></script>
+  <script>
+    function updateSliderThumb(input) {
+      const thumb = document.getElementById(input.id + '-thumb');
+      if (!thumb) return;
+      const min = parseFloat(input.min);
+      const max = parseFloat(input.max);
+      const val = parseFloat(input.value);
+      const pct = (val - min) / (max - min);
+      // Offset accounts for the thumb's own half-width so it doesn't overflow edges
+      const trackWidth = input.offsetWidth;
+      const thumbWidth = thumb.offsetWidth;
+      const offset = pct * (trackWidth - thumbWidth) + thumbWidth / 2;
+      thumb.style.left = offset + 'px';
+      thumb.textContent = '[ ' + val + ' ]';
+    }
+
+    document.querySelectorAll('.slider-wrap input[type=range]').forEach(input => {
+      updateSliderThumb(input);
+      input.addEventListener('input', () => updateSliderThumb(input));
+    });
+
+    // Re-position on resize (track width changes)
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.slider-wrap input[type=range]').forEach(updateSliderThumb);
+    });
+  </script>
+</body>
+
+</html>
