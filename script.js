@@ -487,4 +487,24 @@ function initializeListeners() {
       render();
     });
   }
+
+  const imprintBtn = document.getElementById("imprint-btn");
+  const imprintBtn2 = document.getElementById("imprint-btn-2");
+  const tableText = document.getElementById("table-text");
+  const imprintTextEl = document.getElementById("imprint-text");
+
+  function toggleImprint(open) {
+    if (open) {
+      const header = tableText.closest(".site-header");
+      const top = tableText.getBoundingClientRect().top - header.getBoundingClientRect().top;
+      imprintTextEl.style.top = `${top}px`;
+    }
+
+    document.body.classList.toggle("imprint-open", open);
+    tableText.classList.toggle("hidden", open);
+    imprintTextEl.classList.toggle("hidden", !open);
+  }
+
+  if (imprintBtn) imprintBtn.addEventListener("click", () => toggleImprint(true));
+  if (imprintBtn2) imprintBtn2.addEventListener("click", () => toggleImprint(false));
 }

@@ -41,6 +41,7 @@ header {
   padding-bottom: 20px;
   font-family: var(--font-regular);
   height: 50vh;
+  position: relative;
 }
 
 .title {
@@ -83,6 +84,30 @@ header {
   font-family: var(--font-bold);
   position: relative;
   z-index: 30;
+}
+
+#imprint-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  grid-row: auto;
+  align-self: auto;
+}
+
+.imprint-btn {
+  font-family: "GT Canon Mono Medium";
+  font-size: var(--font-size-sm);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+body.imprint-open #table-view,
+body.imprint-open .bottom {
+  display: none;
 }
 
 .gallery-text {

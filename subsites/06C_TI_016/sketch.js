@@ -7,6 +7,8 @@ let cellH = 600 / 11;
 let gridX = 40;
 let gridY = 30;
 
+const EXPORT_SCALE = 3;
+
 let btnLoad, btnClear, btnSave, btnRowPlus, btnRowMinus, btnColPlus, btnColMinus, btnMode;
 let sliderOne, sliderTwo, sliderThree, widthSlider, offsetSlider;
 
@@ -291,6 +293,51 @@ function drawContourMode() {
 
 // Strips mode
 
+// Builds a single rotated, cropped strip buffer for word `w`, sampled from
+// sourceImage at full resolution and sized relative to the given gw/gh grid
+// dimensions (pass gw/gh * EXPORT_SCALE to build a higher-res strip for export).
+function buildStrip(w, gw, gh, padding) {
+  let sw = (w.w + padding * w.w * 2) * gw;
+  let sh = (w.h + padding * w.h * 2) * gh;
+
+  let cropW = max(2, ceil(sw));
+  let cropH = max(2, ceil(sh));
+
+  let imgX = w.x * sourceImage.width;
+  let imgY = w.y * sourceImage.height;
+  let imgW = w.w * sourceImage.width;
+  let imgH = w.h * sourceImage.height;
+
+  let padPxX = padding * imgW;
+  let padPxY = padding * imgH;
+  imgX -= padPxX; imgY -= padPxY;
+  imgW += 2 * padPxX; imgH += 2 * padPxY;
+
+  let diag = ceil(Math.sqrt(cropW * cropW + cropH * cropH));
+  let buf = createGraphics(diag, diag);
+  buf.pixelDensity(1);
+  buf.clear();
+
+  let bx = diag / 2, by = diag / 2;
+  buf.push();
+  buf.translate(bx, by);
+  buf.rotate(radians(-w.angle));
+  buf.imageMode(CENTER);
+  buf.image(sourceImage,
+    0, 0, cropW, cropH,
+    imgX, imgY, imgW, imgH);
+  buf.pop();
+
+  let strip = createGraphics(cropW, cropH);
+  strip.pixelDensity(1);
+  strip.clear();
+  strip.image(buf, 0, 0, cropW, cropH,
+    (diag - cropW) / 2, (diag - cropH) / 2, cropW, cropH);
+  buf.remove();
+
+  return { pg: strip, w: cropW, h: cropH, angle: w.angle };
+}
+
 function drawStripsMode() {
   if (!sourceImage || ocrWords.length === 0) return;
 
@@ -307,45 +354,7 @@ function drawStripsMode() {
     let visibleWords = ocrWords.filter(w => w.conf >= confMin);
 
     for (let w of visibleWords) {
-      let sw = (w.w + padding * w.w * 2) * gw;
-      let sh = (w.h + padding * w.h * 2) * gh;
-
-      let cropW = max(2, ceil(sw));
-      let cropH = max(2, ceil(sh));
-
-      let imgX = w.x * sourceImage.width;
-      let imgY = w.y * sourceImage.height;
-      let imgW = w.w * sourceImage.width;
-      let imgH = w.h * sourceImage.height;
-
-      let padPxX = padding * imgW;
-      let padPxY = padding * imgH;
-      imgX -= padPxX; imgY -= padPxY;
-      imgW += 2 * padPxX; imgH += 2 * padPxY;
-
-      let diag = ceil(Math.sqrt(cropW * cropW + cropH * cropH));
-      let buf = createGraphics(diag, diag);
-      buf.pixelDensity(1);
-      buf.clear();
-
-      let bx = diag / 2, by = diag / 2;
-      buf.push();
-      buf.translate(bx, by);
-      buf.rotate(radians(-w.angle));
-      buf.imageMode(CENTER);
-      buf.image(sourceImage,
-        0, 0, cropW, cropH,
-        imgX, imgY, imgW, imgH);
-      buf.pop();
-
-      let strip = createGraphics(cropW, cropH);
-      strip.pixelDensity(1);
-      strip.clear();
-      strip.image(buf, 0, 0, cropW, cropH,
-        (diag - cropW) / 2, (diag - cropH) / 2, cropW, cropH);
-      buf.remove();
-
-      cachedStrips.push({ pg: strip, w: cropW, h: cropH, angle: w.angle });
+      cachedStrips.push(buildStrip(w, gw, gh, padding));
     }
   }
 
@@ -630,7 +639,9 @@ function getClosestIntersection(x, y) {
 function saveImage() {
   let gw = cols * cellW;
   let gh = rows * cellH;
-  let pg = createGraphics(windowWidth, windowHeight);
+  let sgw = gw * EXPORT_SCALE;
+  let sgh = gh * EXPORT_SCALE;
+  let pg = createGraphics(windowWidth * EXPORT_SCALE, windowHeight * EXPORT_SCALE);
   pg.pixelDensity(1);
   pg.clear();
 
@@ -645,8 +656,8 @@ function saveImage() {
       if (cachedContourPaths.length > 0) {
         for (let { ox, oy, pts } of cachedContourPaths) {
           if (pts.length === 0) continue;
-          ctx.moveTo(ox - gridX + pts[0].x, oy - gridY + pts[0].y);
-          for (let k = 1; k < pts.length; k++) ctx.lineTo(ox - gridX + pts[k].x, oy - gridY + pts[k].y);
+          ctx.moveTo((ox - gridX + pts[0].x) * EXPORT_SCALE, (oy - gridY + pts[0].y) * EXPORT_SCALE);
+          for (let k = 1; k < pts.length; k++) ctx.lineTo((ox - gridX + pts[k].x) * EXPORT_SCALE, (oy - gridY + pts[k].y) * EXPORT_SCALE);
           ctx.closePath();
         }
         ctx.clip('evenodd');
@@ -654,14 +665,14 @@ function saveImage() {
         let padding = sliderOne.value();
         let visibleWords = ocrWords.filter(w => w.conf >= confMin);
         for (let w of visibleWords) {
-          let ww = w.w * gw, wh = w.h * gh;
+          let ww = w.w * sgw, wh = w.h * sgh;
           let px = padding * ww, py = padding * wh;
-          ctx.rect(w.x * gw - px, w.y * gh - py, ww + 2 * px, wh + 2 * py);
+          ctx.rect(w.x * sgw - px, w.y * sgh - py, ww + 2 * px, wh + 2 * py);
         }
         ctx.clip();
       }
 
-      pg.image(sourceImage, 0, 0, gw, gh);
+      pg.image(sourceImage, 0, 0, sgw, sgh);
       ctx.restore();
     }
 
@@ -672,34 +683,42 @@ function saveImage() {
       pg.textAlign(LEFT, TOP);
       for (let w of ocrWords) {
         if (w.conf < confMin) continue;
-        let fs = max(6, w.h * gh);
+        let fs = max(6, w.h * sgh);
         pg.textSize(fs);
-        pg.text(w.text, w.x * gw, w.y * gh);
+        pg.text(w.text, w.x * sgw, w.y * sgh);
       }
     }
 
     if (displayMode !== 'strips' && cachedContourPaths.length > 0) {
       pg.noFill();
       pg.stroke(0);
-      pg.strokeWeight(0.5);
+      pg.strokeWeight(0.5 * EXPORT_SCALE);
       for (let { ox, oy, pts } of cachedContourPaths) {
         pg.beginShape();
-        for (let p of pts) pg.vertex(ox - gridX + p.x, oy - gridY + p.y);
+        for (let p of pts) pg.vertex((ox - gridX + p.x) * EXPORT_SCALE, (oy - gridY + p.y) * EXPORT_SCALE);
         pg.endShape(CLOSE);
       }
     }
 
-    if (displayMode === 'strips' && cachedStrips.length > 0) {
-      pg.remove();
-      let totalH = cachedStrips.reduce((s, c) => s + c.h + 6, 0);
-      let maxW   = cachedStrips.reduce((m, c) => max(m, c.w), 0);
-      pg = createGraphics(maxW, totalH);
-      pg.pixelDensity(1);
-      pg.clear();
-      let curY = 0;
-      for (let s of cachedStrips) {
-        pg.image(s.pg, 0, curY, s.w, s.h);
-        curY += s.h + 6;
+    if (displayMode === 'strips' && ocrWords.length > 0) {
+      let padding = sliderOne.value();
+      let visibleWords = ocrWords.filter(w => w.conf >= confMin);
+      let exportStrips = visibleWords.map(w => buildStrip(w, sgw, sgh, padding));
+
+      if (exportStrips.length > 0) {
+        pg.remove();
+        let stripGap = 6 * EXPORT_SCALE;
+        let totalH = exportStrips.reduce((s, c) => s + c.h + stripGap, 0);
+        let maxW   = exportStrips.reduce((m, c) => max(m, c.w), 0);
+        pg = createGraphics(maxW, totalH);
+        pg.pixelDensity(1);
+        pg.clear();
+        let curY = 0;
+        for (let s of exportStrips) {
+          pg.image(s.pg, 0, curY, s.w, s.h);
+          curY += s.h + stripGap;
+          s.pg.remove();
+        }
       }
     }
   }

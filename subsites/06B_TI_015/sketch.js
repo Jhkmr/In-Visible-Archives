@@ -73,7 +73,7 @@ function windowResized() {
 }
 
 function draw() {
-  background('#e6e6e6');
+  background('#fff');
   drawGrid();
 
   let bv = widthSlider.value(), tv = offsetSlider.value(), cv2 = sliderTwo.value(), pv = sliderOne.value();
@@ -261,7 +261,7 @@ function drawContourMode() {
 
   noFill();
   stroke(0);
-  strokeWeight(10);
+  strokeWeight(1);
   for (let { ox, oy, pts } of cachedContourPaths) {
     beginShape();
     for (let p of pts) vertex(ox + p.x, oy + p.y);
