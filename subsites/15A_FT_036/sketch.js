@@ -634,6 +634,8 @@ function setup() {
 
   renderHeadlineTextList();
 
+  setupScreensaver();
+
 }
 
 // Tab visibility
@@ -1245,6 +1247,99 @@ function windowResized() {
   resizeDebounceTimer = setTimeout(() => {
     contoursDirty = true;
   }, 150);
+  if (screensaverActive) fitScreensaverCanvas();
+}
+
+// Screensaver
+
+const SCREENSAVER_IDLE_MS = 5 * 60 * 1000;
+const SCREENSAVER_ACTIVITY_EVENTS = [
+  "mousemove", "mousedown", "wheel", "keydown", "touchstart",
+];
+const SCREENSAVER_SWALLOWED_EVENTS = [
+  "mousedown", "mouseup", "click", "touchstart",
+];
+
+let screensaverActive = false;
+let screensaverIdleTimer = null;
+let screensaverRafId = null;
+let screensaverEl = null;
+let screensaverStageEl = null;
+let screensaverCtx = null;
+
+function setupScreensaver() {
+  screensaverEl = document.getElementById("screensaver");
+  screensaverStageEl = document.getElementById("screensaverStage");
+  screensaverCtx = document.getElementById("screensaverCanvas").getContext("2d");
+
+  for (let name of SCREENSAVER_ACTIVITY_EVENTS) {
+    window.addEventListener(name, onScreensaverActivity, { capture: true, passive: true });
+  }
+  // The gesture that wakes the screen shouldn't also reach the sketch beneath it.
+  for (let name of SCREENSAVER_SWALLOWED_EVENTS) {
+    screensaverEl.addEventListener(name, (e) => e.stopPropagation());
+  }
+
+  resetScreensaverTimer();
+}
+
+function onScreensaverActivity() {
+  if (screensaverActive) exitScreensaver();
+  resetScreensaverTimer();
+}
+
+function resetScreensaverTimer() {
+  clearTimeout(screensaverIdleTimer);
+  screensaverIdleTimer = setTimeout(enterScreensaver, SCREENSAVER_IDLE_MS);
+}
+
+function sketchCanvasEl() {
+  return document.querySelector(".canvas-wrap canvas");
+}
+
+function enterScreensaver() {
+  if (screensaverActive) return;
+  if (!sketchCanvasEl()) {
+    resetScreensaverTimer();
+    return;
+  }
+  screensaverActive = true;
+  screensaverEl.classList.add("active");
+  fitScreensaverCanvas();
+  drawScreensaverFrame();
+}
+
+function exitScreensaver() {
+  if (!screensaverActive) return;
+  screensaverActive = false;
+  cancelAnimationFrame(screensaverRafId);
+  screensaverRafId = null;
+  screensaverEl.classList.remove("active");
+}
+
+// Mirrors the sketch canvas at its full backing resolution, scaled down to fit
+// the window, so the blown-up copy stays as crisp as the original.
+function fitScreensaverCanvas() {
+  let src = sketchCanvasEl();
+  if (!src) return;
+  let cnv = screensaverCtx.canvas;
+  cnv.width = src.width;
+  cnv.height = src.height;
+  let { w, h } = fitSize(screensaverStageEl, src.width / src.height);
+  cnv.style.width = w + "px";
+  cnv.style.height = h + "px";
+}
+
+function drawScreensaverFrame() {
+  if (!screensaverActive) return;
+  let src = sketchCanvasEl();
+  if (src) {
+    let cnv = screensaverCtx.canvas;
+    if (src.width !== cnv.width || src.height !== cnv.height) fitScreensaverCanvas();
+    screensaverCtx.clearRect(0, 0, cnv.width, cnv.height);
+    screensaverCtx.drawImage(src, 0, 0);
+  }
+  screensaverRafId = requestAnimationFrame(drawScreensaverFrame);
 }
 
 function fitSize(wrap, ratio) {
