@@ -10,9 +10,9 @@
   --font-mono: "Archive Grotesk Mono 400";
   --font-mono-italic: "Archive Grotesk Mono 400 Italic";
 
-  --font-size-base: 14.7px;
-  --font-size-sm: 14.2px;
-  --font-size-md: 14.5px;
+  --font-size-base: 14.2px;
+  --font-size-sm: 13.7px;
+  --font-size-md: 14px;
 
   --line-height-tight: 1.07;
   --line-height-base: 1.12;
@@ -233,12 +233,12 @@ body.imprint-open .bottom {
 
 #hover-image-overlay {
   position: fixed;
-  top: 15px;
-  right: 15px;
-  bottom: 15px;
+  top: 0;
+  right: 0;
+  bottom: 0;
   left: auto;  /* 66.3vw; */
   pointer-events: none;
-  z-index: 10;
+  z-index: 100;
   opacity: 0;
   transition: opacity 0.2s ease;
   /* background: #fff; */
@@ -255,6 +255,12 @@ body.imprint-open .bottom {
   opacity: 0;
   transition: opacity 0.2s ease;
   background: #fff;
+}
+
+#app:has(#table-view:not(.detail-mode)) + #hover-image-overlay.visible {
+  opacity: 0.5;
+  filter: saturate(130%);
+  mix-blend-mode: hard-light;
 }
 
 #hover-image-overlay.visible {
