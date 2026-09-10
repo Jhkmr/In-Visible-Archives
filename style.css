@@ -10,9 +10,9 @@
   --font-mono: "Archive Grotesk Mono 400";
   --font-mono-italic: "Archive Grotesk Mono 400 Italic";
 
-  --font-size-base: 14.2px;
-  --font-size-sm: 13.7px;
-  --font-size-md: 14px;
+  --font-size-base: 13.8px;
+  --font-size-sm: 13.2px;
+  --font-size-md: 13.5px;
 
   --line-height-tight: 1.07;
   --line-height-base: 1.12;
@@ -233,12 +233,15 @@ body.imprint-open .bottom {
 
 #hover-image-overlay {
   position: fixed;
-  top: 0;
+   top: 0;
   right: 0;
   bottom: 0;
-  left: auto;  /* 66.3vw; */
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
-  z-index: 100;
+  z-index: 10;
   opacity: 0;
   transition: opacity 0.2s ease;
   /* background: #fff; */
@@ -257,10 +260,19 @@ body.imprint-open .bottom {
   background: #fff;
 }
 
-#app:has(#table-view:not(.detail-mode)) + #hover-image-overlay.visible {
+#app:has(#table-view:not(.detail-mode)) + #hover-image-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
   opacity: 0.5;
-  filter: saturate(130%);
+  filter: saturate(140%);
   mix-blend-mode: hard-light;
+  z-index: 100;
 }
 
 #hover-image-overlay.visible {
@@ -274,6 +286,34 @@ body.imprint-open .bottom {
   object-fit: cover;
   object-position: left center;
   display: block;
+}
+
+#app:has(#table-view:not(.detail-mode)) + #hover-image-overlay img,
+#app:has(#table-view:not(.detail-mode)) + #hover-image-overlay video {
+  width: auto;
+  height: 45vh;
+}
+
+#app:has(#table-view.detail-mode) + #hover-image-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+  z-index: 10;
+}
+
+#app:has(#table-view.detail-mode) + #hover-image-overlay img,
+#app:has(#table-view.detail-mode) + #hover-image-overlay video {
+  width: auto;
+  height: 100vh;
+}
+
+#app:has(#table-view:not(.detail-mode)) + #hover-image-overlay video {
+  display: none;
 }
 
 #hover-image-overlay img.hidden,
