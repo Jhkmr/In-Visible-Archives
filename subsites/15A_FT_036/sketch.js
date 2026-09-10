@@ -14,17 +14,17 @@ function updateGridMetrics() {
   cellH = (height - gridY * 2) / rows;
 }
 
-let showImage = false;
+let showImage = true;
 let canvasBgColor = "#ffffff";
 
 const DOT_FILL_MODES = ["outline", "fill"];
-let dotFillMode = "outline"; // 'outline' | 'fill'
+let dotFillMode = "fill"; // 'outline' | 'fill'
 
 const SLANT_MODES = ["regular", "slanted", "backslanted"];
 const SLANT_ANGLES = { regular: 0, slanted: -30, backslanted: 30 };
 let slantMode = "regular"; // 'regular' | 'slanted' | 'backslanted'
 
-let areaInverse = false; // false = inside contour (default), true = outside contour / inside crop rect
+let areaInverse = true; // false = inside contour (default), true = outside contour / inside crop rect
 
 let layoutMode = "progression"; // 'base' | 'progression' | 'notes' | 'combination' | 'headlines'
 let progressionRegionIndex = -1;
@@ -2220,7 +2220,7 @@ function saveImage() {
 
   pg.elt.toBlob((contentBlob) => {
     pgUI.elt.toBlob((uiBlob) => {
-      triggerDownload(uiBlob, stamp + "_ui.png");
+      /*triggerDownload(uiBlob, stamp + "_ui.png");*/
       pgUI.remove();
       setTimeout(() => {
         triggerDownload(contentBlob, stamp + "_content.png");
