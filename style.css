@@ -291,7 +291,7 @@ body.imprint-open .bottom {
 #app:has(#table-view:not(.detail-mode)) + #hover-image-overlay img,
 #app:has(#table-view:not(.detail-mode)) + #hover-image-overlay video {
   width: auto;
-  height: 45vh;
+  height: 30vh;
 }
 
 #app:has(#table-view.detail-mode) + #hover-image-overlay {
